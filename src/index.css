@@ -11,3 +11,5 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.pb-2 { padding-bottom: 2%; }
