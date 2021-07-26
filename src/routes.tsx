@@ -5,18 +5,42 @@ import {
   Account,
   Dashboard,
   Login,
+  Home,
   Register,
   Settings,
-  NotFound
+  NotFound,
+  ProductDetails,
+  Cart
 } from './views';
 
 import DashboardLayout from './components/DashboardLayout';
 import MainLayout from './components/MainLayout';
 
 const routes = (loggedIn: boolean) => [
+  { 
+    path: '', 
+    element: <MainLayout />,
+    children: [
+      { path: '', element: <Home /> },
+      {
+        path: 'produto',
+        element: <MainLayout />,
+        children: [
+          { path: 'ver/:id', element: <ProductDetails /> }
+        ]
+      },
+      {
+        path: 'carrinho',
+        element: <MainLayout />,
+        children: [
+          { path: '', element: <Cart /> }
+        ]
+      }
+    ],
+  },
   {
     path: 'painel-de-controle',
-    element: loggedIn ? <DashboardLayout /> : <Navigate to="/" />,
+    element: loggedIn ? <DashboardLayout /> : <Navigate to="/entrar" />,
     children: [
       { path: '', element: <Dashboard /> },
       { path: 'perfil', element: <Account /> },
@@ -29,7 +53,6 @@ const routes = (loggedIn: boolean) => [
     path: '',
     element: loggedIn === false ? <Outlet/> : <Navigate to="/painel-de-controle" />,
     children: [
-      { path: '', element: <MainLayout /> },
       { path: 'entrar', element: <Login /> },
       { path: 'registrar-se', element: <Register /> },
       { path: '*', element: <NotFound /> }

@@ -25,6 +25,10 @@ export const authSlice = createSlice({
 
             localStorage.setItem('token', token);
         },
+        signOut: (state) => {
+            localStorage.removeItem('token');
+            state.loggedIn = false;
+        }
     },
 });
 

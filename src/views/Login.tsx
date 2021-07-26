@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRedux } from '../hooks/useRedux';
 import { signIn } from '../store/auth/actions';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
 import {
@@ -24,6 +24,7 @@ import { AtSign } from 'react-feather';
 export const Login = () => {
   const { useAppDispatch } = useRedux();
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   
   const [form, setForm] = React.useState({ email: '', password: '' });
 
@@ -63,6 +64,13 @@ export const Login = () => {
             >
               Digite seus dados para acessar a plataforma !
             </Typography>
+            <Typography 
+              color="textSecondary"
+              gutterBottom
+              style={{ textDecoration: 'underline', fontWeight: 'bold', cursor: 'pointer' }}
+              variant="body2"
+              onClick={() => navigate('/')}
+            >Ou volte ao menu !</Typography> 
           </Box>
           <Grid
             container

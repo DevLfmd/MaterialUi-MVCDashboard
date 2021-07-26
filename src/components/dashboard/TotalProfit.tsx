@@ -1,4 +1,5 @@
 import {
+  Box,
   Avatar,
   Card,
   CardContent,
@@ -6,6 +7,7 @@ import {
   Typography
 } from '@material-ui/core';
 import { indigo } from '@material-ui/core/colors';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 
 const TotalProfit = (props: any) => (
@@ -13,7 +15,6 @@ const TotalProfit = (props: any) => (
     <CardContent>
       <Grid
         container
-        spacing={3}
         sx={{ justifyContent: 'space-between' }}
       >
         <Grid item>
@@ -22,13 +23,13 @@ const TotalProfit = (props: any) => (
             gutterBottom
             variant="h6"
           >
-            TOTAL PROFIT
+            TOTAL LUCRO
           </Typography>
           <Typography
             color="textPrimary"
             variant="h3"
           >
-            $23,200
+            R$23,200
           </Typography>
         </Grid>
         <Grid item>
@@ -43,6 +44,30 @@ const TotalProfit = (props: any) => (
           </Avatar>
         </Grid>
       </Grid>
+      <Box
+        sx={{
+          alignItems: 'center',
+          display: 'flex',
+          pt: 2
+        }}
+      >
+        <ArrowUpwardIcon sx={{ color: indigo[900] }} />
+        <Typography
+          variant="body2"
+          sx={{
+            color: indigo[900],
+            mr: 1
+          }}
+        >
+          32%
+        </Typography>
+        <Typography
+          color="textSecondary"
+          variant="caption"
+        >
+          Desde o último mês
+        </Typography>
+      </Box>
     </CardContent>
   </Card>
 );

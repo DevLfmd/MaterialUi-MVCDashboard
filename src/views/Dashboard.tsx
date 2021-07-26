@@ -9,7 +9,6 @@ import Budget from '../components/dashboard/Budget';
 import LatestOrders from '../components/dashboard/LatestOrders';
 import LatestProducts from '../components/dashboard/LatestProducts';
 import Sales from '../components/dashboard/Sales';
-import TasksProgress from '../components/dashboard/TasksProgress';
 import TotalCustomers from '../components/dashboard/TotalCustomers';
 import TotalProfit from '../components/dashboard/TotalProfit';
 import TrafficByDevice from '../components/dashboard/TrafficByDevice';
@@ -33,39 +32,30 @@ export const Dashboard = () => (
         >
           <Grid
             item
-            lg={3}
+            lg={4}
             sm={6}
-            xl={3}
+            xl={4}
             xs={12}
           >
             <Budget />
           </Grid>
           <Grid
             item
-            lg={3}
+            lg={4}
             sm={6}
-            xl={3}
+            xl={4}
             xs={12}
           >
             <TotalCustomers />
           </Grid>
           <Grid
             item
-            lg={3}
+            lg={4}
             sm={6}
-            xl={3}
+            xl={4}
             xs={12}
           >
-            <TasksProgress />
-          </Grid>
-          <Grid
-            item
-            lg={3}
-            sm={6}
-            xl={3}
-            xs={12}
-          >
-            <TotalProfit sx={{ height: '100%' }} />
+            <TotalProfit />
           </Grid>
           <Grid
             item

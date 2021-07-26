@@ -18,22 +18,22 @@ const RequestListToolbar = (props: any) => (
       }}
     >
       <Button>
-        Import
+        Importar
       </Button>
       <Button sx={{ mx: 1 }}>
-        Export
+        Exportar
       </Button>
       <Button
         color="primary"
         variant="contained"
       >
-        Add product
+        Adicionar pedido
       </Button>
     </Box>
     <Box sx={{ mt: 3 }}>
       <Card>
         <CardContent>
-          <Box sx={{ maxWidth: 500 }}>
+          <Box>
             <TextField
               fullWidth
               InputProps={{
@@ -48,7 +48,7 @@ const RequestListToolbar = (props: any) => (
                   </InputAdornment>
                 )
               }}
-              placeholder="Search product"
+              placeholder="Buscar produto"
               variant="outlined"
             />
           </Box>

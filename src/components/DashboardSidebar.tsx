@@ -1,11 +1,10 @@
-import { useEffect } from 'react';
-import { Link as RouterLink, useLocation } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import {
+  Hidden,
   Avatar,
   Box,
   Divider,
   Drawer,
-  Hidden,
   List,
   Typography
 } from '@material-ui/core';
@@ -14,8 +13,7 @@ import {
   BarChart,
   Settings,
   Clipboard,
-  User,
-  LogOut
+  User
 } from 'react-feather';
 
 import NavItem from './NavItem';
@@ -55,14 +53,6 @@ type TProps = {
 };
 
 const DashboardSidebar: React.FC<TProps> = ({ onMobileClose, openMobile }) => {
-  const location = useLocation();
-
-  useEffect(() => {
-    if (openMobile && onMobileClose) {
-      onMobileClose();
-    }
-  }, [location.pathname, onMobileClose, openMobile]);
-
   const content = (
     <Box
       sx={{
@@ -121,21 +111,20 @@ const DashboardSidebar: React.FC<TProps> = ({ onMobileClose, openMobile }) => {
   
   return (
     <>
-      <Hidden lgUp>
-        <Drawer
-          anchor="left"
-          onClose={onMobileClose}
-          open={openMobile}
-          variant="temporary"
-          PaperProps={{
-            sx: {
-              width: 256
-            }
-          }}
-        >
-          {content}
-        </Drawer>
-      </Hidden>
+      <Drawer
+        anchor="left"
+        open={openMobile}
+        variant="persistent"
+        PaperProps={{
+          sx: {
+            width: 256,
+            top: 64,
+            height: 'calc(100% - 64px)'
+          }
+        }}
+      >
+        {content}
+      </Drawer>
       <Hidden lgDown>
         <Drawer
           anchor="left"

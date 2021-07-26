@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { experimentalStyled } from '@material-ui/core';
 import DashboardNavbar from './DashboardNavbar';
@@ -39,14 +39,14 @@ const DashboardLayoutContent = experimentalStyled('div')({
 });
 
 const DashboardLayout = () => {
-  const [isMobileNavOpen, setMobileNavOpen] = useState(false);
+  const [sideBarState, setSideBarState] = React.useState<boolean>(true);
 
   return (
     <DashboardLayoutRoot>
-      <DashboardNavbar onMobileNavOpen={() => setMobileNavOpen(true)} />
+      <DashboardNavbar onMobileNavOpen={() => setSideBarState(!sideBarState)} />
       <DashboardSidebar
-        onMobileClose={() => setMobileNavOpen(false)}
-        openMobile={isMobileNavOpen}
+        onMobileClose={() => setSideBarState(false)}
+        openMobile={sideBarState}
       />
       <DashboardLayoutWrapper>
         <DashboardLayoutContainer>

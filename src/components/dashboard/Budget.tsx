@@ -12,7 +12,6 @@ import { red } from '@material-ui/core/colors';
 
 const Budget = (props: any) => (
   <Card
-    sx={{ height: '100%' }}
     {...props}
   >
     <CardContent>
@@ -27,13 +26,13 @@ const Budget = (props: any) => (
             gutterBottom
             variant="h6"
           >
-            BUDGET
+            DESPESAS
           </Typography>
           <Typography
             color="textPrimary"
             variant="h3"
           >
-            $24,000
+            R$24,000
           </Typography>
         </Grid>
         <Grid item>
@@ -69,7 +68,7 @@ const Budget = (props: any) => (
           color="textSecondary"
           variant="caption"
         >
-          Since last month
+          Desde o último mês
         </Typography>
       </Box>
     </CardContent>

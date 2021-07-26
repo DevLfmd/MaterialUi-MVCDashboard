@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Box,
   Card,
   CardContent,
@@ -8,7 +7,6 @@ import {
   Typography
 } from '@material-ui/core';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import GetAppIcon from '@material-ui/icons/GetApp';
 
 const RequestCard = ({ request, ...rest }: any) => (
   <Card
@@ -27,10 +25,10 @@ const RequestCard = ({ request, ...rest }: any) => (
           pb: 3
         }}
       >
-        <Avatar
+        <img
           alt="Product"
-          src={request.media}
-          variant="square"
+          width="240px"
+          src={request.imageUrl}
         />
       </Box>
       <Typography
@@ -39,14 +37,7 @@ const RequestCard = ({ request, ...rest }: any) => (
         gutterBottom
         variant="h4"
       >
-        {request.title}
-      </Typography>
-      <Typography
-        align="center"
-        color="textPrimary"
-        variant="body1"
-      >
-        {request.description}
+        {request.name}
       </Typography>
     </CardContent>
     <Box sx={{ flexGrow: 1 }} />
@@ -71,26 +62,7 @@ const RequestCard = ({ request, ...rest }: any) => (
             sx={{ pl: 1 }}
             variant="body2"
           >
-            Updated 2hr ago
-          </Typography>
-        </Grid>
-        <Grid
-          item
-          sx={{
-            alignItems: 'center',
-            display: 'flex'
-          }}
-        >
-          <GetAppIcon color="action" />
-          <Typography
-            color="textSecondary"
-            display="inline"
-            sx={{ pl: 1 }}
-            variant="body2"
-          >
-            {request.totalDownloads}
-            {' '}
-            Downloads
+            Atualizado 2hr atrás
           </Typography>
         </Grid>
       </Grid>

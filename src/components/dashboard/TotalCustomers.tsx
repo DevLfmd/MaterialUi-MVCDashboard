@@ -24,7 +24,7 @@ const TotalCustomers = (props: any) => (
             gutterBottom
             variant="h6"
           >
-            TOTAL CUSTOMERS
+            TOTAL CLIENTES
           </Typography>
           <Typography
             color="textPrimary"
@@ -66,7 +66,7 @@ const TotalCustomers = (props: any) => (
           color="textSecondary"
           variant="caption"
         >
-          Since last month
+          Desde o último mês
         </Typography>
       </Box>
     </CardContent>
